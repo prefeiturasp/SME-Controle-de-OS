@@ -59,8 +59,8 @@ Banco de Dados
 
 ### Subir ambiente de desenvolvimento
 1. Iniciar ambiente virtual:
-  Windons:  myvenv\Scripts\activate
-  Linux e OSX: source myvenv/bin/activate ou . myvenv/bin/activate
+  * Windons:  myvenv\Scripts\activate
+  * Linux e OSX: source myvenv/bin/activate ou . myvenv/bin/activate
 
 2. Instalar Django: `python3 -m pip install --upgrade pip`
 
