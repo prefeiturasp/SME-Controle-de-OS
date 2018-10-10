@@ -34,6 +34,7 @@ Qualquer outro grupo de discussão não é reconhecido oficialmente.
 - Iniciar a escrita de testes unitários
 - Iniciar escrita de testes funcionais
 - Melhorar documentação de maneira enxuta
+- Dockerizar a aplicação
 
 
 ## Como contribuir
