@@ -60,7 +60,7 @@ class Status(models.Model):
 
 class Login(models.Model):
     login =  models.CharField(max_length= 12)
-    senha = models.IntegerField()
+    senha = models.CharField(max_length= 10)
 
 
 class Administrativo(models.Model):

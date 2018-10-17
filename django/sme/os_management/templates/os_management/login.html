@@ -1,6 +1,13 @@
-<html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</body>
-</html>
+{% extends 'os_management/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form method="POST" class="login-form">{% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Login</button>
+    </form>
+
+{% endblock %}
+
