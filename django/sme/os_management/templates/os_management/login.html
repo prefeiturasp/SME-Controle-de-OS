@@ -6,8 +6,10 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/login.css' %}">
     </head>
-        {% load crispy_forms_tags %}
+    {% load crispy_forms_tags %}
+    <div class="content container">
         {% block content %}
+        <h1>Gestão de Ordem de Serviço</h1>
         <div class="row justify-content-center"></div>
             <form method="POST" class="login-form">
                 {% csrf_token %}
@@ -16,6 +18,6 @@
             </form>
         </div>    
         {% endblock content%}  
-    
+    </div>
 </html>
 

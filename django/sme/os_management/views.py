@@ -14,3 +14,11 @@ def menu(request):
 def cadastro(request):
     form = CadastroOSForm
     return render(request, 'os_management/cadastro.html', {'form': form})
+
+def relatorios(request):
+    return render(request, 'os_management/relatorios.html', {})
+    
+
+def visualizarOS(request):
+    return render(request, 'os_management/visualizarOS.html', {})
+    

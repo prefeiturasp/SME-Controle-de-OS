@@ -1,7 +1,12 @@
 from django.db import models
 import uuid
 
-# Create your models here.
+TIPO_CHOICES = (
+    ('CORRECAO', 'Correção'),
+    ('EVOLUCAO', 'Evolução'),
+
+)
+
 class Coordenadoria(models.Model):
     id_coord = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     coord_nome = models.CharField(max_length= 100)
@@ -34,14 +39,10 @@ class TermoAditivo(models.Model):
     id_termo_contrato_ad =  models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     termo_contrato_aditivo = models.CharField(max_length= 20)
 
-class Prioridade(models.Model):
-    id_prioridade = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    prioridade = models.CharField(max_length= 50)
-
 
 class TipoServico(models.Model):
     id_tipo = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    tipo = models.CharField(max_length= 100)
+    tipo = models.CharField(max_length= 100, choices= TIPO_CHOICES)
 
 
 class Sistema(models.Model):
@@ -70,6 +71,7 @@ class Administrativo(models.Model):
 class Demandante(models.Model):
     id_area_demandante = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     id_divisao = models.ForeignKey(Divisao, on_delete=models.CASCADE)
+    demandante = models.CharField(max_length=20,)
 
 class CadastroOS(models.Model):
     n_os = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
@@ -78,7 +80,7 @@ class CadastroOS(models.Model):
     termo_aditivo_contrato = models.ForeignKey(TermoAditivo, on_delete= models.CASCADE)
     id_demandante = models.ForeignKey(Demandante, on_delete=models.CASCADE)
     responsavel = models.CharField(max_length= 100)
-    id_prioridade = models.ForeignKey(Prioridade, on_delete=models.CASCADE)
+    prioridade = models.BooleanField('Emergencial', default=False)
     id_tipo = models.ForeignKey(TipoServico, on_delete=models.CASCADE)
     id_sistema = models.ForeignKey(Sistema, on_delete=models.CASCADE)
     dt_necessidade = models.DateField()

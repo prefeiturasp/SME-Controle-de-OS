@@ -21,4 +21,6 @@ urlpatterns = [
     path('', include('sme.os_management.urls')),
     path('menu/', include('sme.os_management.urls')),
     path('cadastro/', include('sme.os_management.urls')),
+    path('relatoris/', include('sme.os_management.urls')),
+    path('visualizarOS/', include('sme.os_management.urls')),
 ]
