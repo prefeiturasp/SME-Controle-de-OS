@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <html>
     <head>
         <meta charset="utf-8">
@@ -6,14 +6,19 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="/static/img/logo-prefeitura.jpeg" />
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <!--<link rel="stylesheet" href="{% static 'css/base.css' %}">
         <link rel="stylesheet" href="{% static 'css/menu.css' %}">
-        <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">-->
+
+        <link rel="stylesheet" href="../../static/css/base.css">
+        <link rel="stylesheet" href="../../static/css/menu.css">
+        <link rel="stylesheet" href="../../static/css/cadastro.css">
+        
         <title>Gestão de Ordem de Serviço</title>
     </head>
 
-    <header class="topo">
-        <div class="topo-container" display: flex;>
+    <header>
+        <div class="topo-container">
             <a class="imagem" href="/menu"><img src="../../static/img/logo-prefeitura.jpeg" width="150px"></a>
             <h1>Gestão de Ordem de serviço</h1>
         </div>
