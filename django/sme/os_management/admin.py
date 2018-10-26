@@ -4,8 +4,7 @@ from sme.os_management.models import (Usuario)
 # Register your models here.
 class UsuarioAdmin(admin.ModelAdmin):
   #model:Usuario
-  readonly_fields = ['id_divisao']
-  list_display = ['usuario_nome', 'usuario_login', 'id_usuario']
+  list_display = ['usuario_nome', 'usuario_login']
   search_fields = ['usuario_nome']
 admin.site.register(Usuario, UsuarioAdmin)
 

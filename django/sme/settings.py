@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sme.os_management',
     'crispy_forms',
+   
+    
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -81,9 +83,9 @@ WSGI_APPLICATION = 'sme.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'osmanagementdb',
-        'USER': 'osmanager',
-        'PASSWORD': 'osos',
+        'NAME': 'managementdb',
+        'USER': 'osmanagementuser',
+        'PASSWORD': 'osmanagement',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

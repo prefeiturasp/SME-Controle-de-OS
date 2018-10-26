@@ -19,21 +19,25 @@
     <header>
         <div class="topo-container">
             <a class="imagem" href="/menu"><img src="../../static/img/logo-prefeitura.jpeg" width="150px"></a>
-            <h1>Gestão de Ordem de serviço</h1>
-        </div>
-    </header>
-
-    <body>
-        <div class="content container">
+            <div class="content container">
                 <nav class="navbar">
                     <a class="btn btn-primary" href="/cadastro">Cadastro OS</a>
                     <a class="btn btn-primary" href="/relatorios">Relatórios</a>
                     <a class="btn btn-primary" href="/visualizarOS">Visualizar OS</a>
                     <a class="btn btn-primary" href="">Pesquisa</a>
                 </nav>
-                
+            </div>  
+            <h1>Gestão de Ordem de serviço</h1>
+        </div>
+    </header>
+
+    <body>
+        <div class="content container">
+            <div class="margem">
                 {% block content %}
                 {% endblock content%}
+            </div>
+                
         </div>
     </body>
 </html>

@@ -1,8 +1,8 @@
 
 from django.shortcuts import render
 from django.conf import settings
-from .forms import LoginForm, CadastroOSForm
-from .models import CadastroOS
+from .forms import LoginForm, CadastroOSForm, CadastroOS
+
 
 def login(request):
     form = LoginForm
