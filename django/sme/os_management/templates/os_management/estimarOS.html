@@ -1,0 +1,12 @@
+{% extends 'os_management/base.html'%}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row justify-content-center"></div>
+    <form method="POST" class="estimarOS-form">{% csrf_token %}
+        {% crispy form %}
+        <button type="submit" class="btn btn-success">Estimar</button>
+    </form>
+</div>    
+{% endblock content%}

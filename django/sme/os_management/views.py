@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 from django.conf import settings
-from .forms import LoginForm, CadastroOSForm, CadastroOS
+from .forms import (LoginForm, CadastroOSForm, EstimarOSForm)
 
 
 def login(request):
@@ -14,6 +14,10 @@ def menu(request):
 def cadastro(request):
     form = CadastroOSForm
     return render(request, 'os_management/cadastro.html', {'form': form})
+
+def estimarOS(request):
+    form = EstimarOSForm
+    return render(request, 'os_management/estimarOS.html', {'form': form})
 
 def relatorios(request):
     return render(request, 'os_management/relatorios.html', {})

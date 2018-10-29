@@ -1,9 +1,5 @@
-.navbar{
+.menu{
+    background-color: #007FFF;
     width: 100%;
-    height: 80px;
-}
-
-button{
-    border: none;
-    font-weight: bold;
+    
 }
