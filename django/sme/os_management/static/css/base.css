@@ -1,3 +1,8 @@
+body{
+    margin-top: 0;
+     
+}
+
 .topo-container{
     display: flex;
     background-color: #007FFF;
@@ -29,6 +34,22 @@ h1{
     font-weight: bold;
 }
 
+
+span{
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+    
+}
+
+
+.rodape{
+    background-color: #007FFF;
+    margin-top: 200px;
+    height: 60px;
+    
+}
+
 @media(max-width:580px) {
     .navbar{
         margin-bottom: 100px;
@@ -38,4 +59,5 @@ h1{
     h1{
         visibility: hidden; 
     }
+
 }

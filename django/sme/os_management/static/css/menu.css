@@ -1,5 +1,9 @@
 .menu{
-    background-color: #007FFF;
-    width: 100%;
-    
+    margin-top: 200px;
+}
+
+
+h2{
+    margin-bottom: 100px;
+    font-weight: bold;
 }

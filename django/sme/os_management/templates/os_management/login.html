@@ -1,24 +1,33 @@
 {% load static %}
 
 <html>
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    </head>
-    {% load crispy_forms_tags %}
-    <div class="content container">
-        {% block content %}
-        <h1>Gestão de Ordem de Serviço</h1>
-        <div class="row justify-content-center"></div>
-            <form method="POST" class="login-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button type="submit" class="btn btn-success">Login</button>
-            </form>
-        </div>    
-        {% endblock content%}  
-    </div>
-   
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../static/css/login.css">
+</head>
+<body>
+    <div align="center" class="container">
+        <span id="nome-sistema">Sistema de Gestão de Ordem de Serviço</span>
+        <form class="form-signin" method="post" id="login-form">{% csrf_token %}
+            <h2 class="form-signin-heading">{{ message }}</h2>
+            <label for="id_username" class="sr-only">Email address</label>
+            <input type="text" name="username" id="id_username" class="form-control" placeholder="User Name" required autofocus>
+            <label for="id_password" class="sr-only">Password</label>
+            <input type="password" name="password" id="id_password" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div> 
+ 
+</body>
 </html>
 
+
+
+ 
+        
