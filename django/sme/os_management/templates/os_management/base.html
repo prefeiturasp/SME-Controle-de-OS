@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Gestão de OS</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
         <!--<link rel="stylesheet" href="{% static 'css/base.css' %}">
         <link rel="stylesheet" href="{% static 'css/menu.css' %}">
         <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">-->
@@ -26,20 +26,24 @@
                     <a class="btn btn-primary" href="/relatorios">Relatórios</a>
                     <a class="btn btn-primary" href="/visualizarOS">Visualizar OS</a>
                     <a class="btn btn-primary" href="">Pesquisa</a>
+                    <span class="navbar-text">
+                        Gestão de Ordem de serviço
+                    </span>
                 </nav>
             </div>  
-            <h1>Gestão de Ordem de serviço</h1>
         </div>
     </header>
 
     <body>
-        <div class=" container">
-            {% block content %}
+        <div class="container">
+            <div class="margem">
+                {% block content %}
 
-            {% endblock content%}
+                {% endblock content%}
+            </div>
         </div>
-        <footer class="rodape">
-            <span>Um sistema da Secretária Muninipal de Educação</span>
-        </footer>
     </body>
+    <footer class="footer navbar-fixed-bottom">
+        <span>Um sistema da Secretária Muninipal de Educação</span>
+    </footer>
 </html>

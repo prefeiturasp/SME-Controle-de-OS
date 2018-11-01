@@ -49,18 +49,18 @@ class Login(models.Model):
     senha = models.CharField(max_length= 10)
 
 class Administrativo(models.Model):
-    processo_adm = models.CharField(max_length= 20)
+    processo_adm = models.CharField(max_length= 20, verbose_name='Processo Administrativo')
 
 class Demandante(models.Model):
     demandante = models.CharField(max_length=20,)
 
 class CadastroOS(models.Model):
     n_os = models.IntegerField() 
-    processo_adm = models.ForeignKey(Administrativo, on_delete= models.CASCADE, verbose_name='Processo Administrativo')
+    processo_adm = models.ForeignKey(Administrativo, on_delete= models.CASCADE)
     termo_contrato = models.ForeignKey(TermoContrato, on_delete= models.CASCADE, verbose_name='Termo de Contrato')
     termo_contrato_aditivo = models.ForeignKey(TermoAditivo, on_delete= models.CASCADE, verbose_name= 'Termo Aditivo de Contrato')
     demandante = models.ForeignKey(Demandante, on_delete=models.CASCADE)
-    responsavel = models.CharField(max_length= 100)
+    responsavel = models.CharField(max_length= 100,verbose_name='Responsável')
     prioridade = models.BooleanField('Emergencial', default=False)
     tipo = models.ForeignKey(TipoServico, on_delete=models.CASCADE, verbose_name='Tipo de Serviço')
     sistema = models.ForeignKey(Sistema, on_delete=models.CASCADE)
