@@ -1,9 +1,16 @@
+
 .cadastro-form{
     margin-top: 80px;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    width: 400px;
 }
 
 .btn-success{
     margin-top: 50px;
     
 }
+
 

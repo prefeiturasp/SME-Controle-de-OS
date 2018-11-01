@@ -20,11 +20,10 @@ class CadastroOSForm(forms.ModelForm):
         model = CadastroOS
         fields = ( 'n_os','data_necessidade','demandante' ,'responsavel', 'tipo', 'prioridade', 'sistema', 'solicitacao', 'observacao')
         widgets = {
-            'solicitacao': Textarea(attrs={'cols': 10, 'rows': 5}),
-            'observacao' : Textarea(attrs={'cols': 10, 'rows': 5}),
+            'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5}),
+            'observacao' : Textarea(attrs={'cols': 20, 'rows': 5}),
         }
-
-   
+    
 
 class EstimarOSForm(forms.ModelForm):
 

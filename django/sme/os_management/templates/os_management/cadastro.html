@@ -3,10 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="row justify-content-center"></div>
     <form method="POST" class="cadastro-form">{% csrf_token %}
         {% crispy form %}
         <button type="submit" class="btn btn-success">Cadastrar</button>
-    </form>
-</div>    
+    </form>  
 {% endblock content%}
