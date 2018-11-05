@@ -1,10 +1,22 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from .forms import (LoginForm, CadastroOSForm, EstimarOSForm)
-
+from django import forms
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 
 def login(request):
-    form = LoginForm
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            #form.save()
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
+            user = authenticate(username=username, password=password)
+        return redirect('/menu')
+    else:
+        form = LoginForm()
+        #raise forms.ValidationError('Usuário ou senha inválidos')
     return render(request, 'os_management/login.html', {'form': form})
 
 def menu(request):
