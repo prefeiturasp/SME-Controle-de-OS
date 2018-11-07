@@ -9,14 +9,13 @@ def login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            #form.save()
+            form.save()
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
         return redirect('/menu')
     else:
         form = LoginForm()
-        #raise forms.ValidationError('Usuário ou senha inválidos')
     return render(request, 'os_management/login.html', {'form': form})
 
 def menu(request):
