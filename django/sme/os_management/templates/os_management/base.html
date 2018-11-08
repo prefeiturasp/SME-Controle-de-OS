@@ -26,11 +26,16 @@
                     <a class="btn btn-primary" href="/relatorios">Relatórios</a>
                     <a class="btn btn-primary" href="/visualizarOS">Visualizar OS</a>
                     <a class="btn btn-primary" href="">Pesquisa</a>
-                    <span class="navbar-text">
+                    <!--<span class="navbar-text">
                         Gestão de Ordem de serviço
-                    </span>
+                    </span>-->
                 </nav>
             </div>  
+                {% if user.is_authenticated %}
+                    <li class="nav-item saudacao">
+                        <a class="nav-link " href="">Bem vindo, {{ user }}</a>
+                    </li>
+                {% endif %}
         </div>
     </header>
 

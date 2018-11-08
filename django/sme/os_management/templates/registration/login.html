@@ -14,13 +14,19 @@
 <body>
     <div align="center" class="container">
         <span id="nome-sistema">Sistema de Gestão de Ordem de Serviço</span>
-        <form class="form-signin" method="post" id="login-form">{% csrf_token %}
+        {% if form.errors %}
+            <p>Seu usuário e senha não correspondem. Por favor tente novamente.</p>
+        {% endif %}
+        <!--{% if user.is_authenticated %}
+                <p>Seu usuário não tem acesso para esta ação</p>
+        {% endif %}-->
+        <form class="form-signin" method="post" id="login-form" action="{% url 'login' %}">{% csrf_token %}
             <h2 class="form-signin-heading">{{ message }}</h2>
             <label for="id_username" class="sr-only">Email address</label>
             <input type="text" name="username" id="id_username" class="form-control" placeholder="User Name" required autofocus>
             <label for="id_password" class="sr-only">Password</label>
             <input type="password" name="password" id="id_password" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
     </div> 
  

@@ -26,4 +26,5 @@ urlpatterns = [
     path('relatorios/', include('sme.os_management.urls')),
     path('visualizarOS/', include('sme.os_management.urls')),
     path('estimarOS/', include('sme.os_management.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

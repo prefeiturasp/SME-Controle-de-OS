@@ -22,7 +22,7 @@ body{
     text-decoration-color: white;
 }
 
-.navbar a:hover {
+.navbar :hover {
     background: rgb(218 41 28);
   }
 
@@ -46,6 +46,17 @@ span{
     bottom: 0;
     position: fixed;
 }
+
+.saudacao{
+    list-style-type: none;
+
+}
+
+.nav-link{
+    font-weight: bold;
+    color: white;
+}
+
 
 @media(max-width:580px) {
     .navbar{
