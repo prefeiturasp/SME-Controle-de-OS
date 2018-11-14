@@ -1,12 +1,12 @@
 from django import forms
 from django.forms import ModelForm, Textarea
-from .models import (Login, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
- Demandante, TipoServico, Sistema, Fase, Status)
+from .models import (MeuLogin, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
+Demandante, TipoServico, Sistema, Fase, Status)
 
-class LoginForm(forms.ModelForm):
+class MeuLoginForm(forms.ModelForm):
 
     class Meta:
-        model = Login
+        model = MeuLogin
         fields = ('login', 'senha',)
 
 class CadastroOSForm(forms.ModelForm):

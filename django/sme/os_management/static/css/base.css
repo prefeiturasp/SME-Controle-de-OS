@@ -49,12 +49,18 @@ span{
 
 .saudacao{
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
 
 }
 
 .nav-link{
     font-weight: bold;
     color: white;
+}
+
+.sair{
+    margin-left: 50px;
 }
 
 
