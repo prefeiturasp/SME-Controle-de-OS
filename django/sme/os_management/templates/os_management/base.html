@@ -22,8 +22,17 @@
             <div class="content container">
                 <nav class="navbar">
                     <a class="btn btn-primary" href="{% url 'cadastro' %}">Cadastrar OS</a>
-                    <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a>
-                    <a class="btn btn-primary" href="{% url 'relatorios' %}">Relatórios</a>
+                    <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a>  
+                    <div class="dropdown">
+                        <a href= "#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          Relatórios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href= "" class="dropdown-item">Administrativo</a>
+                            </li>                  
+                        </ul>
+                    </div>
                     <a class="btn btn-primary" href="{% url 'visualizarOS' %}">Visualizar OS</a>
                     <a class="btn btn-primary" href="">Pesquisa</a>
                 </nav>
