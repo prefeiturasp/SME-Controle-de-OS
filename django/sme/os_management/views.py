@@ -4,7 +4,7 @@ from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm)
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Permission
+from django.core.exceptions import PermissionDenied
 
 @login_required (login_url='/accounts/login/')
 def meulogin(request):
@@ -34,15 +34,18 @@ def menu(request):
 def cadastro(request):
     form = CadastroOSForm
     #if form.is_valid():
-     #   form.save()
+     # form.save()
     return render(request, 'os_management/cadastro.html', {'form': form})
 
 @login_required
 def estimarOS(request):
     form = EstimarOSForm
+    if not request.user.has_perm('global_permissions.acesso_estima_os_config'):
+        raise PermissionDenied
     #if form.is_valid():
-     #   form.save()
-    return render(request, 'os_management/estimarOS.html', {'form': form})
+     #  form.save()
+    else:
+        return render(request, 'os_management/estimarOS.html', {'form': form})
 
 @login_required
 def relatorios(request):

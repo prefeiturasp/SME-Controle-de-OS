@@ -22,15 +22,18 @@
             <div class="content container">
                 <nav class="navbar">
                     <a class="btn btn-primary" href="{% url 'cadastro' %}">Cadastrar OS</a>
-                    <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a>  
+                    {% if perms.global_permissions.pode_acessar_pagina_config %}
+                        <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a> 
+                    {% endif %}
                     <div class="dropdown">
                         <a href= "#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                           Relatórios
                         </a>
                         <div class="dropdown-content">
-                            <a href= "" class="dropdown-item">Administrativo</a>   
-                            <a href= "" class="dropdown-item">Demandante</a>       
-                            <a href= "" class="dropdown-item">Fornecedor</a>          
+                            <a href= "" class="dropdown-item">Emergenciais</a>   
+                            <a href= "" class="dropdown-item">Em espera de finalização</a>       
+                            <a href= "" class="dropdown-item">Em faturamento</a>   
+                            <a href= "" class="dropdown-item">Em atraso</a>         
                         </div>
                     </div>
                     <a class="btn btn-primary" href="{% url 'visualizarOS' %}">Visualizar OS</a>
@@ -49,7 +52,7 @@
     </header>
 
     <body>
-        <div class="container">
+        <div class="container" align="center">
             <div class="margem">
                 {% block content %}
 
