@@ -1,13 +1,13 @@
-{% extends 'os_management/base.html' %}
+
+
+{% extends 'os_management/base.html'%}
+
+{% load crispy_forms_tags %}
 
 {% block content %}
-
-<div class="visualizarOS">{% csrf_token %}
-    
-
-    <section>
-        <h1>Tela Visualizar OS</h1>
-    </section>
-</div>
-   
-{% endblock%}
+<div class=""></div>
+    <form method="POST" class="visualizarOS-form">{% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>    
+{% endblock content%}

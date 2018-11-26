@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm)
+from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm,  VisualizarOSForm)
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -53,5 +53,7 @@ def relatorios(request):
     
 @login_required
 def visualizarOS(request):
-    return render(request, 'os_management/visualizarOS.html', {})
+    form =  VisualizarOSForm
+    return render(request, 'os_management/visualizarOS.html', {'form': form})
     
+
