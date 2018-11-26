@@ -5,9 +5,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class=""></div>
-    <form method="POST" class="visualizarOS-form">{% csrf_token %}
+    <form method="POST" class="visualizarOS-form">
+        {% csrf_token %}
         {% crispy form %}
-    </form>
-</div>    
+    </form>    
 {% endblock content%}

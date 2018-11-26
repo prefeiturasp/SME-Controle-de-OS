@@ -39,7 +39,6 @@ class EstimarOSForm(forms.ModelForm):
         'esforco_realizado', 'esforco_relacionamento', 'data_aceite', 'mes_fatura',
         'ano_fatura')
    
-
 class VisualizarOSForm(forms.ModelForm):
 
     processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
@@ -47,5 +46,5 @@ class VisualizarOSForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
-        fields = ('n_os', 'processo_adm', 'data_aceite',)
+        fields = ('n_os', 'processo_adm',)
         
