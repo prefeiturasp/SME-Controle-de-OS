@@ -2,16 +2,31 @@ from django import forms
 from django.forms import ModelForm, Textarea
 from .models import (Login, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
  Demandante, TipoServico, Sistema, Fase, Status)
+from django.contrib import auth
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+from django.forms import ValidationError
 
 class LoginForm(forms.ModelForm):
 
     class Meta:
         model = Login
         fields = ('login', 'senha',)
+    
+    def clean(self, *args, **kwargs):
+         login = self.cleaned_data.get("login")
+         senha = self.cleaned_data.get("senha")
+         if login and senha:
+            user = authenticate(username=login, password=senha)
+            if not user:
+               raise forms.ValidationError("Usuário não existe")
+            if user.checkpassword(senha):
+               raise forms.ValidationError("Senha inválida")
+           
+
 
 class CadastroOSForm(forms.ModelForm):
 
-    
     demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
     tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput())
     sistema = forms.ModelChoiceField(queryset=Sistema.objects.all(), widget=forms.TextInput())
