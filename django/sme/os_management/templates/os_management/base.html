@@ -18,24 +18,41 @@
 
     <header>
         <div class="topo-container">
-            <a class="imagem" href="/menu"><img src="../../static/img/logo-prefeitura.jpeg" width="150px"></a>
+            <a class="imagem" href="{% url 'menu' %}"><img src="../../static/img/logo-prefeitura.jpeg" width="150px"></a>
             <div class="content container">
                 <nav class="navbar">
-                    <a class="btn btn-primary" href="/cadastro">Cadastrar OS</a>
-                    <a class="btn btn-primary" href="/estimarOS">Estimar Os</a>
-                    <a class="btn btn-primary" href="/relatorios">Relatórios</a>
-                    <a class="btn btn-primary" href="/visualizarOS">Visualizar OS</a>
+                    <a class="btn btn-primary" href="{% url 'cadastro' %}">Cadastrar OS</a>
+                    {% if perms.global_permissions.pode_acessar_pagina_config %}
+                        <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a> 
+                    {% endif %}
+                    <div class="dropdown">
+                        <a href= "#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          Relatórios
+                        </a>
+                        <div class="dropdown-content">
+                            <a href= "" class="dropdown-item">Emergenciais</a>   
+                            <a href= "" class="dropdown-item">Em espera de finalização</a>       
+                            <a href= "" class="dropdown-item">Em faturamento</a>   
+                            <a href= "" class="dropdown-item">Em atraso</a>         
+                        </div>
+                    </div>
+                    <a class="btn btn-primary" href="{% url 'visualizarOS' %}">Visualizar OS</a>
                     <a class="btn btn-primary" href="">Pesquisa</a>
-                    <span class="navbar-text">
-                        Gestão de Ordem de serviço
-                    </span>
                 </nav>
             </div>  
+                {% if user.is_authenticated %}
+                    <div class="saudacao">
+                        <a class="nav-link" href="">Bem vindo, {{ user }}</a>
+                        <a class="nav-link sair" href="{% url 'login' %}">Sair</a>
+                    </div>
+                {% else %}
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                {% endif %}
         </div>
     </header>
 
     <body>
-        <div class="container">
+        <div class="container" align="center">
             <div class="margem">
                 {% block content %}
 

@@ -1,38 +1,53 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import (LoginForm, CadastroOSForm, EstimarOSForm)
-from django import forms
-from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
+from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm)
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 
-def login(request):
-    if request.method == "POST":
-        form = LoginForm(request.POST)
+@login_required (login_url='/accounts/login/')
+def meulogin(request):
+    template_name = 'accounts/meuLogin.html'
+    if request.method == 'POST':
+        form = MeuLoginForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
-        return redirect('/menu')
+            user = form.save()
+            user = authenticate(username=user.username, password=form.cleaned_data['password1'])
+            login(request, user)
+            return redirect(settings.LOGIN_URL)
     else:
-        form = LoginForm()
-    return render(request, 'os_management/login.html', {'form': form})
+        form = MeuLoginForm() 
+    context = {
+        'form': form
+    }   
+    return render(request, template_name, context)
 
+@login_required
 def menu(request):
-    return render(request, 'os_management/menu.html', {})
+    if not request.user.is_authenticated:
+       return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+    else:
+        return render(request, 'os_management/menu.html', {})
 
+@login_required
 def cadastro(request):
     form = CadastroOSForm
     return render(request, 'os_management/cadastro.html', {'form': form})
 
+@login_required
 def estimarOS(request):
     form = EstimarOSForm
-    return render(request, 'os_management/estimarOS.html', {'form': form})
+    if not request.user.has_perm('global_permissions.acesso_estima_os_config'):
+        raise PermissionDenied
+    else:
+        return render(request, 'os_management/estimarOS.html', {'form': form})
 
+@login_required
 def relatorios(request):
     return render(request, 'os_management/relatorios.html', {})
     
-
+@login_required
 def visualizarOS(request):
     return render(request, 'os_management/visualizarOS.html', {})
     
