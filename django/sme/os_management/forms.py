@@ -43,8 +43,15 @@ class VisualizarOSForm(forms.ModelForm):
 
     processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
     termo_contrato = forms.ModelChoiceField(queryset=TermoContrato.objects.all(), widget=forms.TextInput())
+    demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
+    tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput())
+    sistema = forms.ModelChoiceField(queryset=Sistema.objects.all(), widget=forms.TextInput())
 
     class Meta:
         model = CadastroOS
-        fields = ('n_os', 'processo_adm',)
-        
+        fields = ('n_os', 'processo_adm', 'data_aceite', 'demandante', 'responsavel', 'prioridade', 'tipo', 'sistema', 'data_necessidade','solicitacao', 'esforco_estimado',)
+        widgets = {
+            'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5}),
+        }
+
+
