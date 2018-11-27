@@ -3,6 +3,7 @@ from django.forms import ModelForm, Textarea
 from .models import (MeuLogin, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
 Demandante, TipoServico, Sistema, Fase, Status)
 
+
 class MeuLoginForm(forms.ModelForm):
 
     class Meta:
@@ -11,7 +12,6 @@ class MeuLoginForm(forms.ModelForm):
 
 class CadastroOSForm(forms.ModelForm):
 
-    
     demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
     tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput())
     sistema = forms.ModelChoiceField(queryset=Sistema.objects.all(), widget=forms.TextInput())

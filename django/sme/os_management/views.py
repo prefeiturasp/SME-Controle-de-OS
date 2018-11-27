@@ -33,8 +33,6 @@ def menu(request):
 @login_required
 def cadastro(request):
     form = CadastroOSForm
-    #if form.is_valid():
-     # form.save()
     return render(request, 'os_management/cadastro.html', {'form': form})
 
 @login_required
@@ -42,8 +40,6 @@ def estimarOS(request):
     form = EstimarOSForm
     if not request.user.has_perm('global_permissions.acesso_estima_os_config'):
         raise PermissionDenied
-    #if form.is_valid():
-     #  form.save()
     else:
         return render(request, 'os_management/estimarOS.html', {'form': form})
 
