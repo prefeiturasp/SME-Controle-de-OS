@@ -23,7 +23,6 @@ urlpatterns = [
     path('login/', include('sme.os_management.urls')),
     path('menu/', include('sme.os_management.urls')),
     path('cadastro/', include('sme.os_management.urls')),
-    path('relatorios/', include('sme.os_management.urls')),
     path('visualizarOS/', include('sme.os_management.urls')),
     path('estimarOS/', include('sme.os_management.urls')),
     path('accounts/', include('django.contrib.auth.urls')),

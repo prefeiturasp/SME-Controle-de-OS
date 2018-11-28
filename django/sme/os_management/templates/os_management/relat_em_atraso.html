@@ -3,5 +3,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
+<div class="relat_em_atraso">{% csrf_token %}
+    <section class="relatorios">
+        <h1>OSs atrasadas</h1>
+    </section>
+</div>
     
 {% endblock content%}

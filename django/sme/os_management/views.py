@@ -42,31 +42,30 @@ def estimarOS(request):
         raise PermissionDenied
     else:
         return render(request, 'os_management/estimarOS.html', {'form': form})
-
-@login_required
-def relatorios(request):
-    return render(request, 'os_management/relatorios.html', {})
-    
+ 
 @login_required
 def visualizarOS(request):
     return render(request, 'os_management/visualizarOS.html', {})
     
 
 @login_required
-def Relat_emerg(request):
-    return render(request,'relat_emerg.html', {})
+def relat_emerg(request):
+    return render(request,'os_management/relat_emerg.html', {})
     
 
 @login_required
-def Relat_em_espera(request):
-    return render(request,'relat_em_espera.html', {})
+def relat_em_espera(request):
+    return render(request,'os_management/relat_em_espera.html', {})
 
 @login_required
-def Relat_em_fatura(request):
-    return render(request,'relat_fatura.html', {})
+def relat_em_fatura(request):
+    if not request.user.has_perm('global_permissions.acesso_faturamento_os_config'):
+        raise PermissionDenied
+    else:
+        return render(request, 'os_management/relat_fatura.html',)
 
 @login_required
-def Relat_em_atraso(request):
-    return render(request,'relat_em_atraso.html', {})
+def relat_em_atraso(request):
+    return render(request,'os_management/relat_em_atraso.html', {})
     
     

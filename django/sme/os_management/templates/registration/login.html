@@ -17,9 +17,6 @@
         {% if form.errors %}
             <p>Seu usuário e senha não correspondem. Por favor tente novamente.</p>
         {% endif %}
-        <!--{% if user.is_authenticated %}
-                <p>Seu usuário não tem acesso para esta ação</p>
-        {% endif %}-->
         <form class="form-signin" method="post" id="login-form" action="{% url 'login' %}">{% csrf_token %}
             <h2 class="form-signin-heading">{{ message }}</h2>
             <label for="id_username" class="sr-only">User Name</label>
