@@ -51,3 +51,22 @@ def relatorios(request):
 def visualizarOS(request):
     return render(request, 'os_management/visualizarOS.html', {})
     
+
+@login_required
+def Relat_emerg(request):
+    return render(request,'relat_emerg.html', {})
+    
+
+@login_required
+def Relat_em_espera(request):
+    return render(request,'relat_em_espera.html', {})
+
+@login_required
+def Relat_em_fatura(request):
+    return render(request,'relat_fatura.html', {})
+
+@login_required
+def Relat_em_atraso(request):
+    return render(request,'relat_em_atraso.html', {})
+    
+    

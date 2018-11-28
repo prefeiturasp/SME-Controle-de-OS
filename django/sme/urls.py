@@ -27,4 +27,8 @@ urlpatterns = [
     path('visualizarOS/', include('sme.os_management.urls')),
     path('estimarOS/', include('sme.os_management.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('relat_emerg/', include('django.contrib.auth.urls')),
+    path('relat_em_espera/', include('django.contrib.auth.urls')),
+    path('relat_em_fatura/', include('django.contrib.auth.urls')),
+    path('relat_em_atraso/', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
