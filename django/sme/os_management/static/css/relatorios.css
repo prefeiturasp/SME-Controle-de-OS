@@ -1,3 +1,10 @@
-.relatorios{
+.relatorios-form{
     margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+    border-width: 3px;
+    border-style: solid;   
+    border-color: grey;
+    background-color: #C0D9D9;
 }

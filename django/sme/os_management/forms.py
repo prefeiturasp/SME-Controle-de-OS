@@ -39,3 +39,9 @@ class EstimarOSForm(forms.ModelForm):
         'esforco_realizado', 'esforco_relacionamento', 'data_aceite', 'mes_fatura',
         'ano_fatura')
    
+
+class RelatoriosForm(forms.ModelForm):
+
+    class Meta:
+        model = CadastroOS
+        fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega',)

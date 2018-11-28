@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm)
+from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm, RelatoriosForm)
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -50,22 +50,26 @@ def visualizarOS(request):
 
 @login_required
 def relat_emerg(request):
-    return render(request,'os_management/relat_emerg.html', {})
+    form = RelatoriosForm
+    return render(request,'os_management/relat_emerg.html', {'form': form})
     
 
 @login_required
 def relat_em_espera(request):
-    return render(request,'os_management/relat_em_espera.html', {})
+    form = RelatoriosForm
+    return render(request,'os_management/relat_em_espera.html', {'form': form})
 
 @login_required
 def relat_em_fatura(request):
+    form = RelatoriosForm
     if not request.user.has_perm('global_permissions.acesso_faturamento_os_config'):
         raise PermissionDenied
     else:
-        return render(request, 'os_management/relat_fatura.html',)
+        return render(request, 'os_management/relat_fatura.html', {'form': form})
 
 @login_required
 def relat_em_atraso(request):
-    return render(request,'os_management/relat_em_atraso.html', {})
+    form = RelatoriosForm
+    return render(request,'os_management/relat_em_atraso.html', {'form': form})
     
     

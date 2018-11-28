@@ -3,9 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="relat_emerg">{% csrf_token %}
-     <section class="relatorios">
-        <h1>OSs emergenciais</h1>
-    </section>
-</div>
+    <form method="POST" class="relatorios-form">{% csrf_token %}
+        {% crispy form %} 
+    </form> 
 {% endblock content%}

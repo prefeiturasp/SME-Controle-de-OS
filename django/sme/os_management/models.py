@@ -1,5 +1,4 @@
 from django.db import models
-#from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin, UserManager)
 
 TIPO_CHOICES = (
     ('CORRECAO', 'Correção'),
@@ -14,14 +13,9 @@ class Divisao(models.Model):
     divisao_sigla = models.CharField(max_length= 6)
     divisao_nome = models.CharField(max_length= 100)
 
-class Usuario(models.Model): #AbstractBaseUser, PermissionsMixin
+class Usuario(models.Model): 
     usuario_login = models.CharField(max_length=10)
     usuario_nome = models.CharField(max_length=100, unique=True)
-   # ativo = models.BooleanField('Está ativo?', blank=True, default=True)
-    #equipe = models.BooleanField('É admin?')
-    #data_cadastro = models.DateTimeField('Data de entrada', auto_now_add=True)
-
-    #object = UserManager
 
 class Fornecedor(models.Model):
     nome_atendente = models.CharField(max_length= 100)
