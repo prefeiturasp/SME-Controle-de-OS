@@ -82,8 +82,8 @@ class Movimentacao(models.Model):
 
 
 class EstimarEsforco(models.Model):
-
     nome_atividade = models.CharField(max_length= 100,verbose_name='Atividade')
-    tempo_esfoco = models.CharField(max_length= 10, verbose_name='Tempo de esforço')
+    tempo_esfoco = models.IntegerField(verbose_name='Tempo de esforço')
     profissional = models.CharField(max_length= 100,verbose_name='Perfil do Profissional')
-    #esforco_total = 
+    esforco_total = models.IntegerField(verbose_name= 'Esfoço Total')
+
