@@ -16,7 +16,7 @@ class CadastroOSForm(forms.ModelForm):
     data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
     demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Digite a sua coordenadoria'}))
     responsavel = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Digite o responsavel por esta solicitação'}))
-    tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: Reparação ou manutenção'}))
+    tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: Reparação, manutenção, nova funcionalidade'}))
     sistema = forms.ModelChoiceField(queryset=Sistema.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: EOL, SGP, SERAP'}))
 
     class Meta:
@@ -44,7 +44,7 @@ class EstimarOSForm(forms.ModelForm):
    
 class VisualizarOSForm(forms.ModelForm):
     
-    n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da Ordem de Serviço'}))
+    n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da OS para visualizar o conteudo dos outos campos'}))
     processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
     termo_contrato = forms.ModelChoiceField(queryset=TermoContrato.objects.all(), widget=forms.TextInput())
     demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
