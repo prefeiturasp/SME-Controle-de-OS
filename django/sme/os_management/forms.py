@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, Textarea
+from django.forms import ModelForm, Textarea, TextInput
 from .models import (MeuLogin, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
 Demandante, TipoServico, Sistema, Fase, Status)
 
@@ -44,4 +44,8 @@ class RelatoriosForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
-        fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega',)
+        fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega', 'solicitacao')
+        widgets = {
+            'solicitacao': TextInput(attrs={'size': '40'}),
+        }
+    
