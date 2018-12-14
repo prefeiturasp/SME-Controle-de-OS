@@ -4,7 +4,14 @@
 
 {% block content %}
     <h1>Ordens de serviço emergenciais não finalizadas</h1>
-    <form method="POST" class="relatorios-form">{% csrf_token %}
-        {% crispy form %} 
-    </form> 
+
+    <div class = "sessao">
+            <div class="solicitacao">
+                <label>Solicitação:<input type="text"></label>
+                <label>Tipo:<input type="text"></label>
+            </div>
+            <form method="POST" class="relatorios-form">{% csrf_token %}
+                {% crispy form %} 
+            </form>  
+    </div>
 {% endblock content%}

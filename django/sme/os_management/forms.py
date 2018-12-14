@@ -44,8 +44,6 @@ class RelatoriosForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
-        fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega', 'solicitacao')
-        widgets = {
-            'solicitacao': TextInput(attrs={'size': '40'}),
-        }
+        fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega')
+       
     

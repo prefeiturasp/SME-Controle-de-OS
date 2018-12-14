@@ -1,7 +1,11 @@
 .relatorios-form{
-    margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
+    
+}
+
+.sessao{
+    margin-top: 50px;
     font-weight: bold;
     border-width: 3px;
     border-style: solid;   
@@ -12,4 +16,16 @@
 h1{
     margin-top: 50px;
     font-size: 30px;
+}
+
+.solicitacao{
+    margin-top: 20px;
+}
+
+@media(max-width:580px) {
+    .relatorios-form{
+        display: flex;
+        flex-direction: column;
+    }
+
 }
