@@ -16,5 +16,14 @@ h1{
     display: flex;
     justify-content: flex-end;
     max-width: 700px;
+    margin-bottom: 50px;
+
 }
 
+h3{
+    margin-top: 40px;
+}
+
+.table-bordered{
+    font-weight: bold;
+}
