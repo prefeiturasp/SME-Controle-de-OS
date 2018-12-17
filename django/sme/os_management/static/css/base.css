@@ -41,10 +41,8 @@ body{
 span{
     font-weight: bold;
     color: white;
-    margin-left: 20px;
     
 }
-
 
 .footer{
     background-color: #007FFF;
@@ -98,7 +96,6 @@ span{
 @media(max-width:580px) {
     .navbar{
         margin-bottom: 30px;
-        margin-left: 20px;
     }
 
 }

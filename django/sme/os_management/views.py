@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm,  VisualizarOSForm)
+from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm, RelatoriosForm, VisualizarOSForm)
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -42,14 +42,36 @@ def estimarOS(request):
         raise PermissionDenied
     else:
         return render(request, 'os_management/estimarOS.html', {'form': form})
-
-@login_required
-def relatorios(request):
-    return render(request, 'os_management/relatorios.html', {})
+ 
     
 @login_required
 def visualizarOS(request):
     form =  VisualizarOSForm
     return render(request, 'os_management/visualizarOS.html', {'form': form})
+  
+@login_required
+def relat_emerg(request):
+    form = RelatoriosForm
+    return render(request,'os_management/relat_emerg.html', {'form': form})
+    
+
+@login_required
+def relat_em_espera(request):
+    form = RelatoriosForm
+    return render(request,'os_management/relat_em_espera.html', {'form': form})
+
+@login_required
+def relat_em_fatura(request):
+    form = RelatoriosForm
+    if not request.user.has_perm('global_permissions.acesso_faturamento_os_config'):
+        raise PermissionDenied
+    else:
+        return render(request, 'os_management/relat_fatura.html', {'form': form})
+
+@login_required
+def relat_em_atraso(request):
+    form = RelatoriosForm
+    return render(request,'os_management/relat_em_atraso.html', {'form': form})
+    
     
 

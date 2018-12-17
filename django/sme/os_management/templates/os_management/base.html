@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="../../static/css/cadastro.css">
         <link rel="stylesheet" href="../../static/css/estimarOS.css">
         <link rel="stylesheet" href="../../static/css/visualizarOS.css">
+        <link rel="stylesheet" href="../../static/css/relatorios.css">
         
     </head>
 
@@ -23,7 +24,7 @@
             <div class="content container">
                 <nav class="navbar">
                     <a class="btn btn-primary" href="{% url 'cadastro' %}">Cadastrar OS</a>
-                    {% if perms.global_permissions.pode_acessar_pagina_config %}
+                    {% if perms.global_permissions.acesso_faturamento_os_config%}
                         <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a> 
                     {% endif %}
                     <div class="dropdown">
@@ -31,10 +32,12 @@
                           Relatórios
                         </a>
                         <div class="dropdown-content">
-                            <a href= "" class="dropdown-item">Emergenciais</a>   
-                            <a href= "" class="dropdown-item">Em espera de finalização</a>       
-                            <a href= "" class="dropdown-item">Em faturamento</a>   
-                            <a href= "" class="dropdown-item">Em atraso</a>         
+                            <a href= "{% url 'relat_emerg' %}" class="dropdown-item">Emergenciais</a>   
+                            <a href= "{% url 'relat_em_espera' %}" class="dropdown-item">Em espera de finalização</a>   
+                            {% if perms.global_permissions.pode_acessar_pagina_config %}    
+                                <a href= "{% url 'relat_em_fatura' %}" class="dropdown-item">Em faturamento</a>   
+                            {% endif %}
+                            <a href= "{% url 'relat_em_atraso' %}" class="dropdown-item">Em atraso</a>         
                         </div>
                     </div>
                     <a class="btn btn-primary" href="{% url 'visualizarOS' %}">Visualizar OS</a>

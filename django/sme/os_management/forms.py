@@ -1,7 +1,8 @@
 from django import forms
-from django.forms import ModelForm, Textarea
+from django.forms import ModelForm, Textarea, TextInput
 from .models import (MeuLogin, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
 Demandante, TipoServico, Sistema, Fase, Status, EstimarEsforco)
+
 
 class MeuLoginForm(forms.ModelForm):
 
@@ -21,6 +22,7 @@ class CadastroOSForm(forms.ModelForm):
     processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
     termo_contrato = forms.ModelChoiceField(queryset=TermoContrato.objects.all(), widget=forms.TextInput())
     termo_contrato_aditivo= forms.ModelChoiceField(queryset=TermoAditivo.objects.all(), widget=forms.TextInput())
+
 
     class Meta:
         model = CadastroOS
@@ -52,9 +54,18 @@ class VisualizarOSForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
+
         fields = ('n_os', 'processo_adm', 'termo_contrato' ,'data_aceite', 'demandante', 'responsavel', 'prioridade', 'tipo', 'sistema', 'data_necessidade','solicitacao', 'data_entrega',)
         widgets = {
             'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5}),
         }
 
+
+class RelatoriosForm(forms.ModelForm):
+
+    class Meta:
+        model = CadastroOS
+        fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega')
+       
+    
 
