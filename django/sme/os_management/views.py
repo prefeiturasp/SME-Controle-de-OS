@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm, RelatoriosForm)
+from .forms import (MeuLoginForm, CadastroOSForm, EstimarOSForm, RelatoriosForm, VisualizarOSForm)
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -43,11 +43,12 @@ def estimarOS(request):
     else:
         return render(request, 'os_management/estimarOS.html', {'form': form})
  
+    
 @login_required
 def visualizarOS(request):
-    return render(request, 'os_management/visualizarOS.html', {})
-    
-
+    form =  VisualizarOSForm
+    return render(request, 'os_management/visualizarOS.html', {'form': form})
+  
 @login_required
 def relat_emerg(request):
     form = RelatoriosForm
@@ -73,3 +74,4 @@ def relat_em_atraso(request):
     return render(request,'os_management/relat_em_atraso.html', {'form': form})
     
     
+

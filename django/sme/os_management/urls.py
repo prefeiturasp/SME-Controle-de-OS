@@ -13,3 +13,4 @@ urlpatterns = [
     path('relat_em_fatura/', views.relat_em_fatura, name='relat_em_fatura'),
     path('relat_em_atraso/', views.relat_em_atraso, name='relat_em_atraso'),
 ]
+

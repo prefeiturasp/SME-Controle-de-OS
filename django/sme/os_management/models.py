@@ -66,9 +66,6 @@ class CadastroOS(models.Model):
     sistema = models.ForeignKey(Sistema, on_delete=models.CASCADE)
     data_necessidade = models.DateField(verbose_name='Data da necessidade')
     solicitacao = models.TextField(max_length= 1500,verbose_name='Solicitação')
-    esforco_estimado = models.IntegerField(verbose_name='Esforço estimado')
-    esforco_realizado= models.IntegerField(verbose_name='Esforço realizado')
-    esforco_relacionamento = models.IntegerField(verbose_name='Esforço Relacionamento')
     data_entrega = models.DateField(verbose_name='Data de entrega')
     data_aceite = models.DateField(verbose_name='Data de aceite')
     ss_prestador_servico = models.CharField(max_length= 10)
@@ -83,4 +80,10 @@ class Movimentacao(models.Model):
     movimentacao = models.CharField(max_length= 100)
     data_movimentacao = models.DateField()
 
+
+class EstimarEsforco(models.Model):
+    nome_atividade = models.CharField(max_length= 100,verbose_name='Atividade')
+    tempo_esfoco = models.IntegerField(verbose_name='Tempo de esforço')
+    profissional = models.CharField(max_length= 100,verbose_name='Perfil do Profissional')
+    esforco_total = models.IntegerField(verbose_name= 'Esfoço Total')
 
