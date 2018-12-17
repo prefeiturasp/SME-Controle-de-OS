@@ -1,4 +1,14 @@
 
+body{
+    background: url("/static/img/moveis-para-escritorio-3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width : 100%;
+    height: 100%;
+    color: white;
+}
+
 .form-signin{
     max-width: 500px;
     margin-top: 100px;
@@ -6,6 +16,7 @@
 
 .container{
     margin-top: 100px;
+    
 }
 
 #id_username{

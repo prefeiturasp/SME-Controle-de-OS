@@ -7,10 +7,23 @@
     max-width: 700px;
 }
 
+h1{
+    font-size: 20px;
+}
+
 .botao{
     margin-top: 50px;
     display: flex;
     justify-content: flex-end;
     max-width: 700px;
+    margin-bottom: 50px;
+
 }
 
+h3{
+    margin-top: 40px;
+}
+
+.table-bordered{
+    font-weight: bold;
+}

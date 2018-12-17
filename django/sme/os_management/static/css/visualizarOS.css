@@ -1,0 +1,38 @@
+.visualizarOS-form{
+    margin-top: 80px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 700px;
+    
+}
+
+table {
+
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: sans-serif;
+    
+}
+
+
+@media (max-width: 767px) { 
+  
+
+    .table-bordered {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .table-bordered  {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    
+}
