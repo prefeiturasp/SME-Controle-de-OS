@@ -30,4 +30,5 @@ urlpatterns = [
     path('relat_em_espera/', include('django.contrib.auth.urls')),
     path('relat_em_fatura/', include('django.contrib.auth.urls')),
     path('relat_em_atraso/', include('django.contrib.auth.urls')),
+    path('aprovarOS/', include('sme.os_management.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

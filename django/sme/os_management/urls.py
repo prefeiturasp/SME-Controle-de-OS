@@ -12,5 +12,7 @@ urlpatterns = [
     path('relat_em_espera/', views.relat_em_espera, name='relat_em_espera'),
     path('relat_em_fatura/', views.relat_em_fatura, name='relat_em_fatura'),
     path('relat_em_atraso/', views.relat_em_atraso, name='relat_em_atraso'),
+    path('aprovarOS/', views.aprovarOS, name='aprovarOS'),
+
 ]
 

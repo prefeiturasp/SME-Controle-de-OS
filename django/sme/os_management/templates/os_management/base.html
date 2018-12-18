@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../../static/css/estimarOS.css">
         <link rel="stylesheet" href="../../static/css/relatorios.css">
         <link rel="stylesheet" href="../../static/css/visualizarOS.css">
+        <link rel="stylesheet" href="../../static/css/aprovarOS.css">
         
     </head>
 
@@ -23,10 +24,12 @@
             <a class="imagem" href="{% url 'menu' %}"><img src="../../static/img/logo-prefeitura.jpeg" width="150px"></a>
             <div class="content container">
                 <nav class="navbar">
-                    <a class="btn btn-primary" href="{% url 'cadastro' %}">Cadastrar OS</a>
+                    <a class="btn btn-primary" href="{% url 'cadastro' %}">Cadastrar</a>
                     {% if perms.global_permissions.acesso_faturamento_os_config%}
-                        <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar Os</a> 
+                        <a class="btn btn-primary" href="{% url 'estimarOS' %}">Estimar</a> 
                     {% endif %}
+                    <a class="btn btn-primary" href="{% url 'visualizarOS' %}">Visualizar</a>
+                    <a class="btn btn-primary" href="{% url 'aprovarOS' %}">Aprovar</a>
                     <div class="dropdown">
                         <a href= "#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                           Relatórios
@@ -40,8 +43,6 @@
                             <a href= "{% url 'relat_em_atraso' %}" class="dropdown-item">Em atraso</a>         
                         </div>
                     </div>
-                    <a class="btn btn-primary" href="{% url 'visualizarOS' %}">Visualizar OS</a>
-                    <a class="btn btn-primary" href="">Pesquisa</a>
                 </nav>
             </div>  
                 {% if user.is_authenticated %}

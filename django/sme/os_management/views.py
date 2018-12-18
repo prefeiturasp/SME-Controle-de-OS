@@ -48,6 +48,12 @@ def visualizarOS(request):
     form =  VisualizarOSForm
     return render(request, 'os_management/visualizarOS.html', {'form': form})
 
+
+@login_required
+def aprovarOS(request):
+    return render(request, 'os_management/aprovarOS.html', {})
+
+
 @login_required
 def relat_emerg(request):
     form = RelatoriosForm

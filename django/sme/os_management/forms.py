@@ -60,14 +60,10 @@ class VisualizarOSForm(forms.ModelForm):
             'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5}),
         }
 
-
-
 class RelatoriosForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
         fields = ('n_os', 'data_aceite','data_necessidade', 'data_entrega')
        
-    
-
     
