@@ -1,11 +1,5 @@
 from django.db import models
 
-TIPO_CHOICES = (
-    ('CORRECAO', 'Correção'),
-    ('EVOLUCAO', 'Evolução'),
-
-)
-
 class Coordenadoria(models.Model):
     coord_nome = models.CharField(max_length= 100)
 
@@ -30,7 +24,7 @@ class TermoAditivo(models.Model):
 
 
 class TipoServico(models.Model):
-    tipo = models.CharField(max_length= 100, choices= TIPO_CHOICES)
+    tipo = models.CharField(max_length= 20)
 
 
 class Sistema(models.Model):
