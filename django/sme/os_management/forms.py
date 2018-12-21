@@ -46,6 +46,7 @@ class EstimarOSForm(forms.ModelForm):
 class VisualizarOSForm(forms.ModelForm):
     
     n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da OS para visualizar o conteúdo'}))
+    status = forms.ModelChoiceField(queryset=Status.objects.all(), widget=forms.TextInput())
     processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
     termo_contrato = forms.ModelChoiceField(queryset=TermoContrato.objects.all(), widget=forms.TextInput())
     demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
@@ -55,7 +56,7 @@ class VisualizarOSForm(forms.ModelForm):
     class Meta:
         model = CadastroOS
 
-        fields = ('n_os', 'processo_adm', 'termo_contrato' ,'data_aceite', 'demandante', 'responsavel', 'prioridade', 'tipo', 'sistema', 'data_necessidade','solicitacao', 'data_entrega',)
+        fields = ('n_os', 'status', 'processo_adm', 'termo_contrato' ,'data_aceite', 'demandante', 'responsavel', 'prioridade', 'tipo', 'sistema', 'data_necessidade','solicitacao', 'data_entrega',)
         widgets = {
             'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5}),
         }
