@@ -10,12 +10,13 @@ class MeuLoginForm(forms.ModelForm):
         model = MeuLogin
         fields = ('login', 'senha',)
 
+
 class CadastroOSForm(forms.ModelForm):
 
     n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da Ordem de Serviço'}))
     data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
     data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
-    demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Digite a sua coordenadoria'}))
+    demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
     responsavel = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Digite o responsável por esta solicitação'}))
     tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: Reparação, manutenção, nova funcionalidade'}))
     sistema = forms.ModelChoiceField(queryset=Sistema.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: EOL, SGP, SERAP'}))
@@ -32,6 +33,7 @@ class CadastroOSForm(forms.ModelForm):
             'observacao' : Textarea(attrs={'cols': 20, 'rows': 5}),
         }
     
+
 
 class EstimarOSForm(forms.ModelForm):
 
