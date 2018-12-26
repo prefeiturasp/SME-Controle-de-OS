@@ -13,7 +13,6 @@ class MeuLoginForm(forms.ModelForm):
 
 class CadastroOSForm(forms.ModelForm):
 
-    n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da Ordem de Serviço'}))
     data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
     data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
     demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput())
@@ -27,7 +26,7 @@ class CadastroOSForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
-        fields = ( 'n_os','data_necessidade','demandante' ,'responsavel', 'processo_adm', 'termo_contrato', 'termo_contrato_aditivo','tipo', 'prioridade', 'sistema', 'solicitacao', 'observacao')
+        fields = ('data_necessidade','demandante' ,'responsavel', 'processo_adm', 'termo_contrato', 'termo_contrato_aditivo','tipo', 'prioridade', 'sistema', 'solicitacao', 'observacao')
         widgets = {
             'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5, 'placeholder':'Descreva qual foi a necessidade que gerou está solicitação'}),
             'observacao' : Textarea(attrs={'cols': 20, 'rows': 5}),
@@ -38,12 +37,10 @@ class CadastroOSForm(forms.ModelForm):
 class EstimarOSForm(forms.ModelForm):
 
     n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da Ordem de Serviço'})) 
-    fase = forms.ModelChoiceField(queryset=Fase.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: Em andamento'}))
-    status = forms.ModelChoiceField(queryset=Status.objects.all(), widget=forms.TextInput())
-
+    
     class Meta:
         model = CadastroOS
-        fields = ('n_os','data_aceite','data_entrega',)
+        fields = ('n_os','data_entrega',)
    
 class VisualizarOSForm(forms.ModelForm):
     
