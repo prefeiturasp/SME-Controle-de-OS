@@ -47,6 +47,7 @@ class Administrativo(models.Model):
 
 class Demandante(models.Model):
     demandante = models.CharField(max_length=20,)
+    nome_demandante = models.CharField(max_length=20)
 
 class CadastroOS(models.Model):
     n_os = models.IntegerField() 
