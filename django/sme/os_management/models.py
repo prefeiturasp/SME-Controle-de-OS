@@ -59,7 +59,7 @@ class CadastroOS(models.Model):
     prioridade = models.BooleanField('Emergencial', default=False)
     tipo = models.ForeignKey(TipoServico, on_delete=models.CASCADE, verbose_name='Tipo de Serviço')
     sistema = models.ForeignKey(Sistema, on_delete=models.CASCADE)
-    data_necessidade = models.DateField(verbose_name='Data da necessidade')
+    data_necessidade = models.DateField(verbose_name='Data da necessidade', max_length= 8)
     solicitacao = models.TextField(max_length= 1500,verbose_name='Solicitação')
     data_entrega = models.DateField(verbose_name='Data de entrega')
     data_aceite = models.DateField(verbose_name='Data de aceite')

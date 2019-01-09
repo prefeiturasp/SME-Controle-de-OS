@@ -9,6 +9,11 @@ class MeuLoginForm(forms.ModelForm):
     class Meta:
         model = MeuLogin
         fields = ('login', 'senha',)
+        
+
+class DateForm(forms.Form):
+
+    date = forms.DateField(input_formats=['%d/%m/%Y'])
 
 
 class CadastroOSForm(forms.ModelForm):
@@ -41,7 +46,7 @@ class CadastroOSForm(forms.ModelForm):
         (4, 'EOL-TEG'),
         (5, 'EOL-UNIFORME'),
         (6, 'EOL-GEO'),
-        (7, 'EOL-LEVE L.EITE'),
+        (7, 'EOL-LEVE LEITE'),
         (8,'EOL-REFEIÇÕES SERVIDAS'),
         (9,'EOL-REFEIÇÕES SERVIDAS TERCEIRIZADAS'),
         (10,'EOL-CENSO'),
@@ -73,7 +78,7 @@ class CadastroOSForm(forms.ModelForm):
     )
 
 
-    data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
+    
     demandante = forms.ChoiceField(choices=DEMANDANTE)
     responsavel = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Digite o responsável por esta solicitação'}))
     tipo = forms.ChoiceField(choices=TIPO)
@@ -85,7 +90,7 @@ class CadastroOSForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
-        fields = ('data_necessidade','demandante' ,'responsavel', 'processo_adm', 'termo_contrato', 'termo_contrato_aditivo','tipo', 'prioridade', 'sistema', 'solicitacao')
+        fields = ('demandante' ,'responsavel', 'processo_adm', 'termo_contrato', 'termo_contrato_aditivo','tipo', 'prioridade', 'sistema', 'solicitacao')
         widgets = {
             'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5, 'placeholder':'Descreva qual foi a necessidade que gerou está solicitação'})
         }
