@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, Textarea, TextInput
+from django.forms import ModelForm, Textarea, TextInput, Select
 from .models import (MeuLogin, CadastroOS, Administrativo, TermoContrato, TermoAditivo,
 Demandante, TipoServico, Sistema, Fase, Status, EstimarEsforco)
 
@@ -10,14 +10,74 @@ class MeuLoginForm(forms.ModelForm):
         model = MeuLogin
         fields = ('login', 'senha',)
 
+
 class CadastroOSForm(forms.ModelForm):
 
+    DEMANDANTE = (
+        (1, 'CIEDU/RH'),
+        (2, 'CIEDU/ESCOLA ALUNOS'),
+        (3, 'COGED/DIPAR'),
+        (4, 'COGED/DIDEM'),
+        (5, 'COGED/GAB'),
+        (6, 'COAD/UNIFORME'),
+        (7, 'COAD/GAB'),
+        (8,'CODAE/GTIC'),
+        (9,'CODAE/LEVE LEITE'),
+        (10,'CODAE/PROGRAMAÇÃO'),
+        (11,'CODAE/LOGISTICA'),
+        (12,'COTIC/DISIS'),
+        (13,'CODAE/ATENDIMENTO'),
+        (14,'COGEP/DIDES'),
+        (15,'COGEP/DICAR'),
+        (16,'COTIC/DITEC'),
+        (17,'CIEDU/ATENDIMENTO'),
+        (18,'COGEP/GAB')
+    )
+
+    SISTEMA = (
+        (1, 'EOL-CONVÊNIOS'),
+        (2, 'EOL-ESCOLA ALUNOS'),
+        (3, 'EOL-RH'),
+        (4, 'EOL-TEG'),
+        (5, 'EOL-UNIFORME'),
+        (6, 'EOL-GEO'),
+        (7, 'EOL-LEVE L.EITE'),
+        (8,'EOL-REFEIÇÕES SERVIDAS'),
+        (9,'EOL-REFEIÇÕES SERVIDAS TERCEIRIZADAS'),
+        (10,'EOL-CENSO'),
+        (11,'EOL-GERENCIAMENTO PROJETO'),
+        (12,'PAPA'),
+        (13,'SISU'),
+        (14,'ATENDIMENTO AO CIEDU'),
+        (15,'ATENDIMENTO A COAD'),
+        (16,'ATENDIMENTO A CODAE'),
+        (17,'ATENDIMENTO A COGED'),
+        (18,'ATENDIMENTO A COGEP'),
+        (19, 'ATENDIMENTO A COTIC'),
+        (20, 'PORTAL GERENCIAL'),
+        (21, 'ATENDIMENTO A COPED'),
+        (22, 'ATENDIMENTO A SME'),
+        (23, 'EOL-EVOLUÇÃO FUNCIONAL'),
+        (24, 'SUPORTE A INFRAESTRUTURA')
+    )
+
+    TIPO = (
+        (1, 'CORREÇÃO'),
+        (2, 'ADAPTAÇÃO'),
+        (3, 'NOVA FUNCIONALIDADE'),
+        (4, 'ANÁLISE'),
+        (5, 'EXTRA PRODUÇÃO'),
+        (6, 'EVOLUÇÃO'),
+        (7, 'NOVO PROJETO'),
+        (8,'SUPORTE'),
+    )
+
+
     data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
-    data_necessidade = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Digite a data que esta OSs deve ser entregue'}))
-    demandante = forms.ModelChoiceField(queryset=Demandante.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Digite a sua coordenadoria'}))
+    demandante = forms.ChoiceField(choices=DEMANDANTE)
     responsavel = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Digite o responsável por esta solicitação'}))
-    tipo = forms.ModelChoiceField(queryset=TipoServico.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: Reparação, manutenção, nova funcionalidade'}))
-    sistema = forms.ModelChoiceField(queryset=Sistema.objects.all(), widget=forms.TextInput(attrs={'placeholder': 'Ex: EOL, SGP, SERAP'}))
+    tipo = forms.ChoiceField(choices=TIPO)
+    sistema = forms.ChoiceField(choices=SISTEMA)
     processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
     termo_contrato = forms.ModelChoiceField(queryset=TermoContrato.objects.all(), widget=forms.TextInput())
     termo_contrato_aditivo= forms.ModelChoiceField(queryset=TermoAditivo.objects.all(), widget=forms.TextInput())
@@ -25,16 +85,17 @@ class CadastroOSForm(forms.ModelForm):
 
     class Meta:
         model = CadastroOS
-        fields = ('data_necessidade','demandante' ,'responsavel', 'processo_adm', 'termo_contrato', 'termo_contrato_aditivo','tipo', 'prioridade', 'sistema', 'solicitacao', 'observacao')
+        fields = ('data_necessidade','demandante' ,'responsavel', 'processo_adm', 'termo_contrato', 'termo_contrato_aditivo','tipo', 'prioridade', 'sistema', 'solicitacao')
         widgets = {
-            'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5, 'placeholder':'Descreva qual foi a necessidade que gerou está solicitação'}),
-            'observacao' : Textarea(attrs={'cols': 20, 'rows': 5}),
+            'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5, 'placeholder':'Descreva qual foi a necessidade que gerou está solicitação'})
         }
     
+
 
 class EstimarOSForm(forms.ModelForm):
 
     n_os = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'Digite o numero da Ordem de Serviço'})) 
+    
     class Meta:
         model = CadastroOS
         fields = ('n_os','data_entrega',)
