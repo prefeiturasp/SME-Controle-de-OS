@@ -11,16 +11,22 @@ Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educa
 
 ## Requesitos
  
+ 1. Python 3.6
+ 2. Máquina virtual 
+ 
+### Criar Máquina Virtual
+ `python3 -m venv nomeDaSuaMaquina`
 
 ## Dependências
 
-  `django 1.11`
-  `django-bootstrap3`
-  `django-crispy-forms`
-  `django-global-permissions`
+  Baixar dependências via requirements.txt
 
 ## Deploy 
 
 1. `pip install`
 2. `pip install requirements.txt`
+3.  Startar maquina virtual: `. nomeDaSuaMaquina/bin/activate`
+4. `cd django`
+5. `python3 manage.py runserver`
+
 
