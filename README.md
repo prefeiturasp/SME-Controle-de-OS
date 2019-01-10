@@ -21,6 +21,6 @@ Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educa
 
 ## Deploy 
 
-1.`pip install`
-2.`pip install requirements.txt`
+1. `pip install`
+2. `pip install requirements.txt`
 
