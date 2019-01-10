@@ -12,7 +12,7 @@ Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educa
 
 ## Dependências
 
-    `Django 1.11`
+    `Django 1.11´
 
 ## Deploy 
 
