@@ -77,15 +77,34 @@ class CadastroOSForm(forms.ModelForm):
         (8,'SUPORTE'),
     )
 
+    PA = (
+        (1, '6016.2016/0015803-3'),
+    )
+
+
+    TC = (
+        (1, '133/SME/2014'),
+
+    )
 
     
+    TAC = (
+        (1, '91/SME/2017'),
+        (2, '238/SME/2017'),
+        (3, '54/SME/2018'),
+        (4, '56/SME/2018'),
+
+
+    )
+
     demandante = forms.ChoiceField(choices=DEMANDANTE)
     responsavel = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Digite o responsável por esta solicitação'}))
     tipo = forms.ChoiceField(choices=TIPO)
     sistema = forms.ChoiceField(choices=SISTEMA)
-    processo_adm = forms.ModelChoiceField(queryset=Administrativo.objects.all(), widget=forms.TextInput())
-    termo_contrato = forms.ModelChoiceField(queryset=TermoContrato.objects.all(), widget=forms.TextInput())
-    termo_contrato_aditivo= forms.ModelChoiceField(queryset=TermoAditivo.objects.all(), widget=forms.TextInput())
+    processo_adm = forms.ChoiceField(choices=PA)
+    termo_contrato = forms.ChoiceField(choices=TC)
+    termo_contrato_aditivo = forms.ChoiceField(choices=TAC)
+     
 
 
     class Meta:
