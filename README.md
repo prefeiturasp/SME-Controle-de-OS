@@ -9,10 +9,18 @@ _“Recurso público retorna ao público”._
 
 Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educação de São Paulo que, por meio do fortalecimento da transparência, da participação social e do desenvolvimento de novas tecnologias, aproxima diferentes grupos da sociedade civil por um objetivo maior: a melhoria da educação na cidade de São Paulo. 
 
+## Requesitos
+ 
 
 ## Dependências
 
-  `Django 1.11`
+  `django 1.11`
+  `django-bootstrap3`
+  `django-crispy-forms`
+  `django-global-permissions`
 
 ## Deploy 
+
+1.`pip install`
+2.`pip install requirements.txt`
 
