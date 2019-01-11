@@ -32,7 +32,13 @@ def menu(request):
 
 @login_required
 def cadastro(request):
-    form = CadastroOSForm
+    if request.method == "POST":
+        form = CadastroOSForm(request.POST)
+        if form.is_valid():
+            cadastro.save()
+
+    else:
+        form = CadastroOSForm()
     return render(request, 'os_management/cadastro.html', {'form': form})
 
 @login_required
