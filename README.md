@@ -25,7 +25,7 @@ Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educa
 
 1. `pip install`
 2. `pip install requirements.txt`
-3.  Rodar a maquina virtual: Muda o comando dependendo do sistema operacional
+3.  Rodar a máquina virtual: Muda o comando dependendo do sistema operacional
 4. `cd django`
 5. `python3 manage.py runserver`
 
