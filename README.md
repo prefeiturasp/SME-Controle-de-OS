@@ -5,10 +5,10 @@
 
 ## Conteúdo
 
-1. [Sobre o sistema de Controle de Ordem de Serviço](#sobre-o-sistema-de-controle-de-ordem-de-serviço)
+1. [Sobre o Sistema de Gereciamento de Ordem de Serviço](#sobre-o-sistema-de-gereciamento-de-ordem-de-serviço)
 2. [Comunicação](#comunicação)
 3. [Como contribuir](#como-contribuir)
-4. [Requesitos do projeto](#requesitos)
+4. [Requesitos do projeto](#requesitos-do-projeto)
 5. [Organização do projeto](#organização-do-projeto)
 6. [Instalação](#instalação)
 
