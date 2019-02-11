@@ -48,7 +48,7 @@ def estimarOS(request):
         raise PermissionDenied
     else:
         return render(request, 'os_management/estimarOS.html', {'form': form})
-
+        
 @login_required
 def visualizarOS(request):
     form =  VisualizarOSForm
