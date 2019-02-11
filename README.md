@@ -1,27 +1,48 @@
-# SME-Controle-de-OS
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/7d34f4c49b56a7c38466/maintainability)](https://codeclimate.com/github/prefeiturasp/SME-Controle-de-OS)
 
+# Controle de Ordem de Serviço
 
-# Pátio Digital
+## Conteúdo
 
-_“Recurso público retorna ao público”._
+1. [Sobre o sistema de Controle de Ordem de Serviço](#sobre-o-sistema-de-controle-de-ordem-de-serviço)
+2. [Comunicação](#comunicação)
+3. [Como contribuir](#como-contribuir)
+4. [Requesitos do projeto](#requesitos)
+5. [Organização do projeto](#organização-do-projeto)
+6. [Instalação](#instalação)
 
-Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educação de São Paulo que, por meio do fortalecimento da transparência, da participação social e do desenvolvimento de novas tecnologias, aproxima diferentes grupos da sociedade civil por um objetivo maior: a melhoria da educação na cidade de São Paulo. 
+## Sobre o Sistema de Gerenciamento de Ordem de Serviço
 
-## Requesitos
+O Sistema de Gereciamento de Ordem de Serviço(OS) foi criado para otimizar todo o processo que engloba a gerencia de uma OS realizado dentro da Secretária municipal de educação (SME).
+
+## Comunicação
+
+| Canal de comunicação | Objetivos |
+|----------------------|-----------|
+| [Issues do Github](https://github.com/prefeiturasp/SME-Controle-de-OS/issues) | - Sugestão de novas funcionalidades<br> - Reportar bugs<br> - Discussões técnicas |
+
+## Como contribuir
+
+Contribuições são **super bem vindas**! Se você tem vontade de construir o
+Fila da creche conosco, veja o nosso [guia de contribuição](./CONTRIBUTING.md)
+onde explicamos detalhadamente como trabalhamos e de que formas você pode nos
+ajudar a alcançar nossos objetivos. Lembrando que todos devem seguir 
+nosso [código de conduta](./CODEOFCONDUCT.md).
+
+
+## Requesitos do projeto
  
  1. Python 3.6
  2. Máquina virtual 
  
-### Criar Máquina Virtual
- `python3 -m venv nomeDaSuaMaquina`
+ 
+## Organização do projeto 
 
-## Dependências
+ Dependências estão citadas no arquivo requirements.txt
+ 
 
-  Baixar dependências via requirements.txt
-
-## Deploy 
+## instalação
 
 1. `pip install`
 2. `pip install requirements.txt`
