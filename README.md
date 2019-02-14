@@ -42,7 +42,7 @@ nosso [código de conduta](./CODEOFCONDUCT.md).
  Dependências estão citadas no arquivo requirements.txt
  
 
-## instalação
+## Instalação
 
 1. `pip install`
 2. `pip install requirements.txt`
