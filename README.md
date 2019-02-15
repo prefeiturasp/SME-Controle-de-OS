@@ -3,29 +3,63 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7d34f4c49b56a7c38466/maintainability)](https://codeclimate.com/github/prefeiturasp/SME-Controle-de-OS)
 
 
-# Pátio Digital
 
-_“Recurso público retorna ao público”._
+## Conteúdo
 
-Nós somos o **pátio digital**, uma iniciativa da Secretaria Municipal de Educação de São Paulo que, por meio do fortalecimento da transparência, da participação social e do desenvolvimento de novas tecnologias, aproxima diferentes grupos da sociedade civil por um objetivo maior: a melhoria da educação na cidade de São Paulo. 
+1. [Sobre o Sistema de Gerenciamento de Ordem de Serviço](#sobre-o-sistema-de-gerenciamento-de-ordem-de-serviço)
+2. [Comunicação](#Comunicação)
+3. [Como contribuir](#como-contribuir)
+4. [Requesitos](#requesitos)
+5. [Como criar e executar a máquina virtual](#como-criar-e-executar-a-máquina-virtual)
+6. [Organização do projeto](#organização-do-projeto)
+7. [Instalação](#instalação)
+
+
+## Sobre o Sistema de Gerenciamento de Ordem de Serviço
+
+
+## Comunicação
+
+| Canal de comunicação | Objetivos |
+|----------------------|-----------|
+| [Issues do Github](https://github.com/prefeiturasp/SME-Controle-de-OS/issues) | - Sugestão de novas funcionalidades<br> - Reportar bugs<br> - Discussões técnicas |
+
+
+## Como Contribuir
+
+Contribuições são **super bem vindas**! Se você tem vontade de construir o
+Fila da creche conosco, veja o nosso [guia de contribuição](./CONTRIBUTING.md)
+onde explicamos detalhadamente como trabalhamos e de que formas você pode nos
+ajudar a alcançar nossos objetivos. Lembrando que todos devem seguir 
+nosso [código de conduta](./CODEOFCONDUCT.md).
+
 
 ## Requesitos
  
- 1. Python 3.6
- 2. Máquina virtual 
+1. Python 3.6
+2. Máquina virtual 
  
-### Criar Máquina Virtual
- `python3 -m venv nomeDaSuaMaquina`
+## Como criar e executar a Máquina Virtual
 
-## Dependências
+Crie a máquina com o nome controlevenv apartir dos comandos:
+No Windowns: `python -m venv controlevenv`
+No linux ou Mac OS: `python3 -m venv controlevenv`
 
-  Baixar dependências via requirements.txt
+Para executar a máquina use os comados:
+No windows: `controlevenv\Scripts\activate`
+No linux ou Mac OS: `source controlevenv/bin/activate` ou `. controlevenv/bin/activate`
 
-## Deploy 
+
+## Organização do projeto
+
+Baixar dependências via requirements.txt
+
+
+## Instalação
 
 1. `pip install`
 2. `pip install requirements.txt`
-3.  Startar maquina virtual: `. nomeDaSuaMaquina/bin/activate`
+3.  Executar maquina virtual: consulte o comando para o seu sistema operacional aqui na documentação
 4. `cd django`
 5. `python3 manage.py runserver`
 
