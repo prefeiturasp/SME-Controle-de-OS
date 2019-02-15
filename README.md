@@ -41,13 +41,13 @@ nosso [código de conduta](./CODEOFCONDUCT.md).
  
 ## Como criar e executar a Máquina Virtual
 
-Crie a máquina com o nome controlevenv apartir dos comandos:
-No Windowns: `python -m venv controlevenv`
-No linux ou Mac OS: `python3 -m venv controlevenv`
+Crie a máquina com o nome controlevenv apartir dos comandos:</br>
+No Windowns: `python -m venv controlevenv`</br>
+No linux ou Mac OS: `python3 -m venv controlevenv`</br>
 
-Para executar a máquina use os comados:
-No windows: `controlevenv\Scripts\activate`
-No linux ou Mac OS: `source controlevenv/bin/activate` ou `. controlevenv/bin/activate`
+Para executar a máquina use os comados:</br>
+No windows: `controlevenv\Scripts\activate`</br>
+No linux ou Mac OS: `source controlevenv/bin/activate` ou `. controlevenv/bin/activate`</br>
 
 
 ## Organização do projeto
