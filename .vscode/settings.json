@@ -1,4 +1,0 @@
-{
-    "python.pythonPath": "${workspaceFolder}/controlevenv/bin/python",
-    "git.ignoreLimitWarning": true
-}
