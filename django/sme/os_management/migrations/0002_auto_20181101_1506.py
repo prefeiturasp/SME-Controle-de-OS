@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='cadastroos',
             name='status',
-            field=models.ForeignKey(default='a', on_delete=django.db.models.deletion.CASCADE, to='os_management.Status'),
+            field=models.ForeignKey(default='0', on_delete=django.db.models.deletion.CASCADE, to='os_management.Status'),
             preserve_default=False,
         ),
         migrations.AlterField(
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='cadastroos',
             name='processo_adm',
-            field=models.ForeignKey(default='a', on_delete=django.db.models.deletion.CASCADE, to='os_management.Administrativo', verbose_name='Processo Administrativo'),
+            field=models.ForeignKey(default='0', on_delete=django.db.models.deletion.CASCADE, to='os_management.Administrativo', verbose_name='Processo Administrativo'),
             preserve_default=False,
         ),
     ]
