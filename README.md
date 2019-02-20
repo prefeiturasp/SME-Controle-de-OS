@@ -58,7 +58,7 @@ Baixar dependências via requirements.txt
 ## Instalação
 
 1. `pip install`
-2. `pip install requirements.txt`
+2. `pip install -r requirements.txt`
 3.  Executar maquina virtual: consulte o comando para o seu sistema operacional aqui na documentação
 4. `cd django`
 5. `python3 manage.py runserver`
