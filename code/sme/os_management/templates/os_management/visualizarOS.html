@@ -1,0 +1,43 @@
+
+
+{% extends 'os_management/base.html'%}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" class="visualizarOS-form">
+        {% csrf_token %}
+        {% crispy form %}
+    </form>    
+
+    <h3>Descrição de cronograma e demanda de pessoal</h3>
+   <table class="table table-bordered">
+       <thead>
+           <tr>
+               <th scope="col">Atividade</th>
+               <th scope="col">Profissional</th>
+               <th scope="col">Tempo esforço</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+               <td><input type="text"></td>
+           </tr>     
+           <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+           </tr>
+           <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+           </tr>
+           <tr class="total">
+               <td colspan="3">Esforço total   <input type="text"></td>
+           </tr>
+       </tbody>
+   </table>
+{% endblock content%}

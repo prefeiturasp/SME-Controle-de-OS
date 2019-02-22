@@ -1,0 +1,18 @@
+{% extends 'os_management/base.html'%}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Ordens de serviço em atraso</h1>
+   
+        <div class = "sessao">
+            <div class="solicitacao">
+                    <label>Solicitação:<input type="text"></label>
+                    <label>Tipo:<input type="text"></label>
+            </div>
+            <form method="POST" class="relatorios-form">{% csrf_token %}
+                    {% crispy form %} 
+            </form>  
+        </div>
+    
+{% endblock content%}
