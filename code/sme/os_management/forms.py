@@ -113,6 +113,59 @@ class CadastroOSForm(forms.ModelForm):
         widgets = {
             'solicitacao': Textarea(attrs={'cols': 20, 'rows': 5, 'placeholder':'Descreva qual foi a necessidade que gerou está solicitação'})
         }
+
+
+    def _init_(self, *args, **kwargs):
+        return super(CadastroOSForm, self)
+
+    def is_valid(self):
+        return super(CadastroOSForm, self).is_valid()
+
+
+    def clean_demandante(self):
+        demandante = self.cleaned_data.get("demandante")
+        return demandante
+
+    def clean_responsavel(self, value):
+        responsavel = self.cleaned_data.get("responsavel")
+        if not value:
+            raise forms.ValidationError('Digite um responsavel')
+        return responsavel
+    
+    def clean_processo_adm(self):
+        processo_adm = self.cleaned_data.get("processo_adm")
+        return processo_adm
+
+    def clean_termo_contrato(self):
+        termo_contrato = self.cleaned_data.get("termo_contrato")
+        return termo_contrato
+
+    def clean_termo_contrato_aditivo(self):
+        termo_contrato_aditivo = self.cleaned_data.get("termo_contrato_aditivo")
+        return termo_contrato_aditivo
+
+    def clean_tipo(self):
+        termo_tipo = self.cleaned_data.get("tipo")
+        return termo_tipo
+
+    def clean_prioridade(self):
+        termo_prioridade = self.cleaned_data.get("prioridade")
+        return termo_prioridade
+
+    def clean_sistema(self):
+        termo_sistema = self.cleaned_data.get("sistema")
+        return termo_sistema
+
+    def clean_solicitacao(self):
+        solicitacao = self.cleaned_data.get("solicitacao")
+        return solicitacao
+
+    def clean(self):
+        return super(CadastroOSForm, self).clean()
+
+
+    def save(self, commit=True):
+        return super(CadastroOSForm, self).save(commit)
     
 
 

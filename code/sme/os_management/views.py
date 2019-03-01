@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
+from django.contrib import messages
 
 @login_required (login_url='/accounts/login/')
 def meulogin(request):
@@ -31,15 +32,19 @@ def menu(request):
         return render(request, 'os_management/menu.html', {})
 
 @login_required
-def cadastro(request):
-    if request.method == "POST":
-        form = CadastroOSForm(request.POST)
+def cadastro(request): 
+    template_name = 'os_management/cadastro.html'                                                                                  
+    if request.method == 'POST':
+        form = CadastroOSForm(request.POST)                                                     
         if form.is_valid():
-            cadastro.save()
-
+            save_it = form.save(commit=False)
+            save_it.save()
+            messages.success(request, 'Seu cadastro foi efetuado com sucesso.')
+        else:
+            messages.info(request, 'Seu cadastro nao pode ser efetuado.')
     else:
         form = CadastroOSForm()
-    return render(request, 'os_management/cadastro.html', {'form': form})
+        return render(request, template_name, {'form': form})
 
 @login_required
 def estimarOS(request):
