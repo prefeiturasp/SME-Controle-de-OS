@@ -38,6 +38,8 @@ nosso [código de conduta](./CODEOFCONDUCT.md).
  
 1. Python 3.6
 2. Máquina virtual 
+3. [Docker](https://docs.docker.com/install/)
+4. [Docker Compose](https://docs.docker.com/compose/install/)
  
 ## Como criar e executar a Máquina Virtual
 
