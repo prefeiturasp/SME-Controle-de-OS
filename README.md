@@ -54,15 +54,15 @@ No linux ou Mac OS: `source controlevenv/bin/activate` ou `. controlevenv/bin/ac
 
 ## Organização do projeto
 
-Baixar dependências via requirements.txt
+Docker automatiza o build das dependencias
 
 
 ## Instalação
 
-1. `pip install`
-2. `pip install -r requirements.txt`
-3.  Executar maquina virtual: consulte o comando para o seu sistema operacional aqui na documentação
-4. `cd django`
-5. `python3 manage.py runserver`
+
+1.  Executar maquina virtual: consulte o comando para o seu sistema operacional aqui na documentação
+2. `docker-compose up`
+3. `cd code`
+4. `python manage.py runserver`
 
 
